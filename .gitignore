@@ -1,0 +1,8 @@
+# Regenerable sample data (re-pull with feasibility/pull_sample.py)
+feasibility/data/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
