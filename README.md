@@ -69,15 +69,30 @@ Free, no API key, ~250M works. We use the "polite pool" (`mailto` param).
   NLP, agriculture, public health)?
 - US pipeline (with IPEDS/HSI): Hispanic/Latino CS-degree trends; HSI research contribution.
 
+## Prototype visualizations (`feasibility/figures/overview.png`)
+
+Four panels, full-corpus aggregates (not just the sample):
+
+- **A. Output by year** — broad AI tripled (9.2K→23.5K); narrow CS-core AI grew slower (2.7K→5.7K).
+- **B. Top subfields** — neural networks, control systems, optimization dominate
+  (engineering-inflected AI profile).
+- **C. Topic momentum** — "Neural Networks and Applications" is the breakout subfield,
+  rising sharply after ~2017 (deep-learning wave reaching the region).
+- **D. CS-core as % of broad AI** — **declined ~30%→24%**: a real, defensible thesis that
+  LatAm AI is increasingly *applied* (medicine, agriculture, engineering), not just CS.
+
+Caveat: the 2024 dip is OpenAlex indexing lag (recent years backfill), not a real decline.
+
 ## Repo layout
 
 ```
 feasibility/
   probe_openalex.py     # aggregate probe — counts, growth, leaders, record shape
   pull_sample.py        # pulls a real sample to disk (cursor-paginated)
-  data/
-    sample.jsonl        # 5,000 trimmed works (one per line)
-    sample_authors.csv  # 41,572 flattened author rows
+  visualize.py          # multi-panel time-series + topic figure
+  data/                 # (gitignored) sample.jsonl + sample_authors.csv
+  figures/
+    overview.png        # prototype dashboard
 ```
 
 ## Next steps (not yet done)
